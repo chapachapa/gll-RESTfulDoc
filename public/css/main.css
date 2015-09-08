@@ -1,0 +1,100 @@
+div, input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*{
+    transition: all 1s linear;
+}
+
+div#displayRESTDoc{
+    background-color: greenyellow;
+}
+
+header{
+    color:#00d6b2;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+body{
+    background-color: #333333;
+    display: flex;
+    justify-content: center;
+}
+
+/* smaller screen */
+/* forget this, don't feel like messing with textarea preps*/
+/*@media screen and (max-width: 900px){
+    div#RESTDocContainer{
+        width: 80%;
+    }
+    div#displayRESTDoc>div{
+        flex-flow: column;
+    }
+    div#displayRESTDoc>div>div:first-child{
+         width: 100%;
+    }
+
+}*/
+
+@media screen and (min-width: 900px){
+    div#RESTDocContainer{
+        width: 600px;
+    }
+    div#displayRESTDoc>div{
+        flex-flow: row;
+    }
+    div#displayRESTDoc>div>div:first-child{
+        width: 170px;
+    }
+}
+
+textarea{
+    resize: vertical;
+    width: 350px;
+    height: 150px;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+div#searchBox{
+    display:flex;
+    justify-content:center;
+}
+
+div#displayRESTDoc>div{
+    display: flex;
+    padding: 0.7em;
+}
+
+div#displayRESTDoc>div>div:first-child{
+    display: flex;
+    font-weight: bold;
+    padding-top:0.5em;
+}
+
+div#displayRESTDoc>div>div:last-child{
+    display: flex;
+    font-weight: bold;
+    width: 100%;
+}
+
+ul#actionListContainer>li{
+    display: flex;
+    width: 100%;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+div#endPointContainer{
+    margin-right: 0.7em;
+    width: 100%;
+}

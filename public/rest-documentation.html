@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/base.css"/>
+    <title>REST Documentation</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script>
+        angular.module('myApp', []).controller('RESTDocController', function ($scope) {
+            $scope.message = 'Hello';
+            $scope.actions = ['Create database entry.', 'Send email to candidate.'];
+            $scope.add = function () {
+                $scope.actions.push('new entry');
+            }
+        });
+    </script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</head>
+<body>
+
+
+    <section ng-controller="RESTDocController">
+
+        <header>
+            <h1>REST Client Documentation</h1>
+        </header>
+        <section>
+            <header>
+                <h2>Search</h2>
+                <input type="text" ng-model="search"/>
+                <button>Search</button>
+            </header>
+        </section>
+        <div class="panel">
+            <table>
+                <tr>
+                    <td>
+                        REST Endpoint
+                    </td>
+                    <td>
+                        <input type="text" ng-model="rest.endpoint"/>
+                        <button>Test Using Postman</button>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Output Schema
+                    </td>
+                    <td ng-hide="edit">
+                         <pre  contenteditable="true" class="prettyprint lang-js">
+{
+    name: 'Charles',
+    id: 10
+}
+                       </pre>
+                        <button ng-click="edit = !edit">Edit</button>
+                    </td>
+                    <td ng-show="edit">
+                        <textarea cols="30" rows="10"></textarea>
+                        <button ng-click="edit = !edit">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Input Schema
+                    </td>
+                    <td ng-hide="edit">
+                         <pre  contenteditable="true" class="prettyprint lang-js">
+{
+    name: 'Charles',
+    id: 10
+}
+                       </pre>
+                        <button ng-click="edit = !edit">Edit</button>
+                    </td>
+                    <td ng-show="edit">
+                        <textarea cols="30" rows="10"></textarea>
+                        <button ng-click="edit = !edit">Save</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Actions</td>
+                    <td>
+                        <ul>
+                            <li ng-repeat="action in actions track by $index">
+                                <input type="text" ng-model="action"/>
+                            </li>
+                            <button ng-click="add()">Add</button>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <button>Submit</button>
+    </section>
+
+</body>
+</html>
