@@ -9,17 +9,17 @@ div, input {
 }
 
 div#displayRESTDoc{
-    background-color: greenyellow;
+    background-color: #bef0ff;
 }
 
 header{
-    color:#00d6b2;
+    color: #b0a7ff;
     font-weight: bold;
     font-size: 2em;
 }
 
 body{
-    background-color: #333333;
+    background-color: #213367;
     display: flex;
     justify-content: center;
 }
@@ -64,6 +64,7 @@ input[type="text"] {
 div#searchBox{
     display:flex;
     justify-content:center;
+    padding-bottom:0.75em;
 }
 
 div#displayRESTDoc>div{
